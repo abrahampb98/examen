@@ -26,7 +26,7 @@ ruta.post('/', function(req, res) {
 })
 
 ruta.patch('/', function(req, res) {
-    controlador.actualizarProducto(req.body.codigo, req.body.nombre, req.body.valor, req.body.proveedores)
+    controlador.actualizarProducto(req.body.codigo, req.body.nombre, req.body.valor, req.body.stock)
         .then((data) => {
             respuesta.exito(req, res, data, 200)
         })
@@ -36,7 +36,7 @@ ruta.patch('/', function(req, res) {
 })
 
 ruta.delete('/', function(req, res) {
-    controlador.eliminarProducto(req.body.abreviatura)
+    controlador.eliminarProducto(req.body.serie)
         .then((data) => {
             respuesta.exito(req, res, data, 200)
         })

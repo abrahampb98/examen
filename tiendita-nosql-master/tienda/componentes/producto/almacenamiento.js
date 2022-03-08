@@ -14,18 +14,18 @@ function obtenerProductos( filtroProducto ) {
     return objeto
 }
 
-function actualizarProducto( producto ) {
-    const objeto = model.findOne( {codigo: producto.codigo} )
+async function actualizarProducto( producto ) {
+    const objeto = await model.findOne( {serie: producto.serie} )
     objeto.serie = producto.serie
     objeto.nombre = producto.nombre
     objeto.valor = producto.valor
     objeto.stock = producto.stock
-    const resultado = objeto.save()
+    const resultado = await objeto.save()
     return resultado
 }
 
-function eliminarProducto( codigo ) {
-    return model.deleteOne({codigo: codigo})
+async function eliminarProducto( serie ) {
+    return await model.deleteOne({serie: serie})
 }
 
 module.exports = {

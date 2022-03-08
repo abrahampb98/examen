@@ -13,11 +13,10 @@ function obtenerProductos( filtroProducto ) {
     })
 }
 
-function actualizarProducto( seri,codigo, nombre, valor, stock ) {
+function actualizarProducto( serie, nombre, valor, stock ) {
     return new Promise((resolve, reject) => {
         let producto = {
             serie: serie,
-            codigo: codigo,
             nombre: nombre,
             valor: valor,
             stock: stock
